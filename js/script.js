@@ -50,6 +50,7 @@ class AluguelCarros {
     }
 }
 
+// inicializa a classe
 let gerencia_aluguel = new AluguelCarros();
 
 const form = document.querySelector(".form-aluguel");
@@ -76,6 +77,7 @@ form.addEventListener("submit", function (event) {
     const valor_dia = preco_veiculos[veiculo] || 0;
     const preco_total = valor_dia * quant_dia;
 
+    //os itens que vao na tabela
     let carro = new AluguelGeral(
         nome_cliente,
         veiculo,
@@ -85,27 +87,40 @@ form.addEventListener("submit", function (event) {
         preco_total
     );
     
-
+    //aqui vai a lógica para salvar o aluguel
     if (indice === "") {
         gerencia_aluguel.adicionar_aluguel(carro);
     } else {
         gerencia_aluguel.aluguel[indice] = carro;
     }
 
+    //atualiza a lista de alugueis
     gerencia_aluguel.atualizar_tabela_aluguel();
 
     form.reset();
     form_indice.value = "";
-    botaoSubmit.innerText = "Enviar";
+    
+    const botaoEditar = document.getElementById("editar");
+
+    //voltar o botao ao nome enviar novamente
+    if (botaoEditar) {
+        botaoEditar.innerText = "Enviar";
+    }
 });
 
 function editar_aluguel(index) {
     const carro = gerencia_aluguel.aluguel[index];
 
+    //aqui você pode atualizar o aluguel, nos campos do formulario
     form_indice.value = index;
     form_nome_cliente.value = carro.nome_cliente;
     form_veiculo.value = carro.veiculo;
     form_quant_dia.value = carro.quant_dia;
 
-    botaoSubmit.innerText = "Editar Aluguel";
+    const botaoEditar = document.getElementById("editar");
+
+    //mudar o nome do botao para "Editar Aluguel" para melhorar a experiencia do usuario ao usar o programa
+    if (botaoEditar) {
+        botaoEditar.innerText = "Editar Aluguel";
+    }
 }
