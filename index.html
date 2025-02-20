@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DriveWay - Aluguéis de Carros</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(98, 148, 240);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Logo" width="200" height="90" class="d-inline-block align-text-top">
+            </a>   
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" style="font-size: 30px; color: aliceblue;">Início</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" style="font-size: 30px;text-decoration: underline;color: aliceblue;">Cadastro de Aluguéis</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" style="font-size: 30px;color: aliceblue;">Sair</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Procurar..." aria-label="Procurar...">
+              <button class="btn btn-success" type="submit">🔎</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container mt-4">
+        <form class="form-aluguel" id="form-aluguel">
+            <input type="hidden" id="indice">
+            <h1 class="titulo">Cadastro de Aluguéis</h1>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="nome-cliente" style="width: 40pc; font-family:'Arial';" placeholder="" required>
+                <label for="nome-cliente">Nome Completo</label>
+            </div>
+
+            <div class="input-group mb-3" style="width: 25pc;">
+                <label class="input-group-text" for="veiculo">Selecione o Carro</label>
+                <select class="form-select" id="veiculo" style="font-family:'Arial';">
+                  <option value="Creta 2025 1.0">Creta 2025 1.0</option>
+                  <option value="Volkswagen Polo 1.2">Volkswagen Polo 1.2</option>
+                  <option value="Volkswagen T-Cross">Volkswagen T-Cross</option>
+                </select>
+            </div>
+
+            <div class="row g-2">
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="number" class="form-control" id="quant-dias" style="width: 25pc; font-family:'Arial';" placeholder="Quantidade de dias" required>
+                    <label for="quant-dias">Quantidade de Dias</label>
+                  </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg mt-3">Enviar</button>
+        </form>
+
+        <div class="table mt-4" style="background-color: blueviolet;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                      <th scope="col">Nome do Cliente</th>
+                      <th scope="col">Veículo</th>
+                      <th scope="col">Quantidade de Dias do Aluguel</th>
+                      <th scope="col">Valor (Diária)</th>
+                      <th scope="col">Valor (Total)</th>
+                      <th scope="col">Data da Retirada do Veículo</th>
+                      <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="listaCarros"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

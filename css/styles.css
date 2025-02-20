@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.form {
+    margin: 90px auto;
+    width: 80pc;
+    height: 50pc;;
+}
+
+.table {
+    margin-top: 5pc;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+}
+
+td {
+    text-align: center;
+}
+
+.titulo {
+    margin-bottom: 40px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+}
